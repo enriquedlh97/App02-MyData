@@ -11,6 +11,7 @@ struct MainView: View {
     
     //@State refhreses screen every time this variable changes
     @State var showImage: Bool = false
+    @State var showEdit: Bool = false
     @State var name: String = "Enrique Diaz de Leon Hicks"
     @State var email: String = "enriquedlh97@hotmail.com"
     @State var country: String = "Mexico"
@@ -44,6 +45,20 @@ struct MainView: View {
                             DataView(texto: email, imagen: "envelope")
                             DataView(texto: country, imagen: "house.fill")
                             DataView(texto: "\(dateFormat.string(from: birthDate))", imagen: "calendar")
+                            Button(action: {
+                                showEdit.toggle()
+                            }, label: {
+                                HStack {
+                                    Image(systemName: "pencil")
+                                        .foregroundColor(Color("Down"))
+                                    Text("Edit")
+                                        .font(.RobotoRegular(size: 20))
+                                        .foregroundColor(Color("Down"))
+                                }
+                                .padding(10)
+                                .background(Color("Up"))
+                                .cornerRadius(20)
+                            })
                         }
                     }
                 }
@@ -64,6 +79,9 @@ struct MainView: View {
         }
         .sheet(isPresented: $showImage) {
             ImageView()
+        }
+        .sheet(isPresented: $showEdit) {
+            EditView(name: $name, email: $email)
         }
         
     }
