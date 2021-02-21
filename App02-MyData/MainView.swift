@@ -11,6 +11,10 @@ struct MainView: View {
     
     //@State refhreses screen every time this variable changes
     @State var showImage: Bool = false
+    @State var name: String = "Enrique Diaz de Leon Hicks"
+    @State var email: String = "enriquedlh97@hotmail.com"
+    @State var birthDate: Date = Date()
+    @State var country: String = "Mexico"
 
     var body: some View {
         
@@ -28,10 +32,11 @@ struct MainView: View {
                     ZStack {
                         Color("Down")
                         VStack {
-                            DataView(texto: "Enrique Diaz de Leon Hicks")                            .padding(.top, 90)
-                            DataView(texto: "B.S. Business Informatics", imagen: "network")
-                            DataView(texto: "enriquedlh97@hotmail.com", imagen: "envelope")
+                            DataView(texto: name, imagen: "person")
+                                .padding(.top, 90)
+                            DataView(texto: email, imagen: "envelope")
                             DataView(texto: "Aguascalientes", imagen: "house.fill")
+                            DataView(texto: "B.S. Business Informatics", imagen: "network")
                         }
                     }
                 }
