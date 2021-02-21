@@ -13,8 +13,15 @@ struct MainView: View {
     @State var showImage: Bool = false
     @State var name: String = "Enrique Diaz de Leon Hicks"
     @State var email: String = "enriquedlh97@hotmail.com"
-    @State var birthDate: Date = Date()
     @State var country: String = "Mexico"
+    @State var birthDate: Date = Date()
+    
+    // Gives format to date
+    var dateFormat: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MMM/dd"
+        return formatter
+    }
 
     var body: some View {
         
@@ -35,8 +42,8 @@ struct MainView: View {
                             DataView(texto: name, imagen: "person")
                                 .padding(.top, 90)
                             DataView(texto: email, imagen: "envelope")
-                            DataView(texto: "Aguascalientes", imagen: "house.fill")
-                            DataView(texto: "B.S. Business Informatics", imagen: "network")
+                            DataView(texto: country, imagen: "house.fill")
+                            DataView(texto: "\(dateFormat.string(from: birthDate))", imagen: "network")
                         }
                     }
                 }
