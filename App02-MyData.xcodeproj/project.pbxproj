@@ -11,12 +11,14 @@
 		535F732225DD896000296826 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535F732125DD896000296826 /* ImageView.swift */; };
 		535F732525DD9AEE00296826 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535F732425DD9AEE00296826 /* ViewController.swift */; };
 		538ABD9525DA0C360034F15D /* App02_MyDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538ABD9425DA0C360034F15D /* App02_MyDataApp.swift */; };
-		538ABD9725DA0C360034F15D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538ABD9625DA0C360034F15D /* ContentView.swift */; };
+		538ABD9725DA0C360034F15D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538ABD9625DA0C360034F15D /* MainView.swift */; };
 		538ABD9925DA0C380034F15D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 538ABD9825DA0C380034F15D /* Assets.xcassets */; };
 		538ABD9C25DA0C380034F15D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 538ABD9B25DA0C380034F15D /* Preview Assets.xcassets */; };
 		538E78C625DC7A920018878E /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 538E78C525DC7A920018878E /* RobotoMono-Regular.ttf */; };
 		538E78C925DC7AA30018878E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 538E78C825DC7AA30018878E /* Roboto-Regular.ttf */; };
 		538E78CC25DC7BD30018878E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538E78CB25DC7BD30018878E /* Fonts.swift */; };
+		53E6307525E3082600F6F953 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6307425E3082600F6F953 /* TestView.swift */; };
+		53E6307925E30C4700F6F953 /* Test1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E6307825E30C4700F6F953 /* Test1View.swift */; };
 		53F0F20725DB6A67004AE567 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F0F20625DB6A67004AE567 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -26,13 +28,15 @@
 		535F732425DD9AEE00296826 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		538ABD9125DA0C360034F15D /* App02-MyData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App02-MyData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		538ABD9425DA0C360034F15D /* App02_MyDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App02_MyDataApp.swift; sourceTree = "<group>"; };
-		538ABD9625DA0C360034F15D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		538ABD9625DA0C360034F15D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		538ABD9825DA0C380034F15D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		538ABD9B25DA0C380034F15D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		538ABD9D25DA0C380034F15D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		538E78C525DC7A920018878E /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
 		538E78C825DC7AA30018878E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		538E78CB25DC7BD30018878E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Fonts.swift; path = "App02-MyData/Fonts.swift"; sourceTree = SOURCE_ROOT; };
+		53E6307425E3082600F6F953 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		53E6307825E30C4700F6F953 /* Test1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1View.swift; sourceTree = "<group>"; };
 		53F0F20625DB6A67004AE567 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +72,9 @@
 			children = (
 				538E78C425DC7A4F0018878E /* Fonts */,
 				538ABD9425DA0C360034F15D /* App02_MyDataApp.swift */,
-				538ABD9625DA0C360034F15D /* ContentView.swift */,
+				538ABD9625DA0C360034F15D /* MainView.swift */,
+				53E6307825E30C4700F6F953 /* Test1View.swift */,
+				53E6307425E3082600F6F953 /* TestView.swift */,
 				535F732125DD896000296826 /* ImageView.swift */,
 				535F731E25DD807900296826 /* DataView.swift */,
 				538ABD9825DA0C380034F15D /* Assets.xcassets */,
@@ -170,11 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E6307525E3082600F6F953 /* TestView.swift in Sources */,
 				535F732525DD9AEE00296826 /* ViewController.swift in Sources */,
 				535F732225DD896000296826 /* ImageView.swift in Sources */,
-				538ABD9725DA0C360034F15D /* ContentView.swift in Sources */,
+				538ABD9725DA0C360034F15D /* MainView.swift in Sources */,
 				538E78CC25DC7BD30018878E /* Fonts.swift in Sources */,
 				535F731F25DD807900296826 /* DataView.swift in Sources */,
+				53E6307925E30C4700F6F953 /* Test1View.swift in Sources */,
 				538ABD9525DA0C360034F15D /* App02_MyDataApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
