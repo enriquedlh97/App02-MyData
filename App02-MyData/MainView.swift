@@ -43,7 +43,7 @@ struct MainView: View {
                                 .padding(.top, 90)
                             DataView(texto: email, imagen: "envelope")
                             DataView(texto: country, imagen: "house.fill")
-                            DataView(texto: "\(dateFormat.string(from: birthDate))", imagen: "network")
+                            DataView(texto: "\(dateFormat.string(from: birthDate))", imagen: "calendar")
                         }
                     }
                 }

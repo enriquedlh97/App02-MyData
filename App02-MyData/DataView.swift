@@ -17,9 +17,11 @@ struct DataView: View {
             Image(systemName: imagen)
                 .font(.title)
                 .foregroundColor(.white)
+            Spacer()
             Text(texto)
-                .font(.RobotoRegular(size: 25))
+                .font(.RobotoRegular(size: 22))
                 .padding()
+            Spacer()
         }
     }
 }
