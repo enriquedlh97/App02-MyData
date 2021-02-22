@@ -11,6 +11,14 @@ struct EditView: View {
     
     @Binding var name: String
     @Binding var email: String
+    @Binding var birthDate: Date
+    
+    // Gives format to date
+    var dateFormat: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MMM/dd"
+        return formatter
+    }
     
     var body: some View {
         VStack {
@@ -42,6 +50,14 @@ struct EditView: View {
                         }
                     }
                 }
+                Section {
+                    // Date picker
+                    DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
+                        Text("\(dateFormat.string(from: birthDate))")
+                            .font(.RobotoRegular(size: 20))
+                            .foregroundColor(Color("Down"))
+                    }
+                }
             }
         }
     }
@@ -51,8 +67,9 @@ struct EditView_Previews: PreviewProvider {
     
     @State static var name: String = "John"
     @State static var email: String = "abc@example.com"
+    @State static var birthDate: Date = Date()
     
     static var previews: some View {
-        EditView(name: $name, email: $email)
+        EditView(name: $name, email: $email, birthDate: $birthDate)
     }
 }

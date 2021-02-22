@@ -81,7 +81,7 @@ struct MainView: View {
             ImageView()
         }
         .sheet(isPresented: $showEdit) {
-            EditView(name: $name, email: $email)
+            EditView(name: $name, email: $email, birthDate: $birthDate)
         }
         
     }
