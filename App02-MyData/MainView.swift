@@ -10,14 +10,20 @@ import SwiftUI
 struct MainView: View {
     
     //@State refhreses screen every time this variable changes
-    @State var showImage: Bool = false
-    @State var showEdit: Bool = false
+//    @State var showImage: Bool = false
+//    @State var showEdit: Bool = false
+    @State var showSheet: Bool = false
+    @State var activeSheet: ActiveSheet?
     @State var name: String = "Enrique Diaz de Leon Hicks"
     @State var email: String = "enriquedlh97@hotmail.com"
     @State var country: String = "Mexico"
     @State var birthDate: Date = Date()
     @State var height: Double = 1.7245
     @State var weight: Int = 66
+    @State var healthIndex: Int = 0
+    
+    let health = ["Good", "Regular", "Bad"]
+    
     
     // Gives format to date
     var dateFormat: DateFormatter {
@@ -45,18 +51,24 @@ struct MainView: View {
                             VStack {
                                 DataView(texto: name, imagen: "person")
                                     .padding(.top, 140)
-                                    .padding(.horizontal)
                                 DataView(texto: email, imagen: "envelope")
-                                    .padding(.horizontal)
                                 DataView(texto: country, imagen: "house")
-                                    .padding(.horizontal)
                                 DataView(texto: "\(dateFormat.string(from: birthDate))", imagen: "calendar")
-                                    .padding(.horizontal)
-                                DataView(texto: "Height: \(String(format: "%0.2f", height)) - Weight: \(weight)", imagen: "heart")
-                                    .padding(.horizontal)
+                                HStack {
+                                    Image(systemName: "heart.fill")
+                                        .font(.title)
+                                        .foregroundColor(Color(health[healthIndex]))
+                                    Spacer()
+                                    Text("Height: \(String(format: "%0.2f", height)) - Weight: \(weight)")
+                                        .font(.RobotoRegular(size: 20))
+                                        .padding()
+                                    Spacer()
+                                }
+                                .padding(.horizontal)
                                 Spacer()
                                 Button(action: {
-                                    showEdit.toggle()
+                                    activeSheet = .edit
+                                    showSheet.toggle()
                                 }, label: {
                                     HStack {
                                         Image(systemName: "pencil")
@@ -77,7 +89,8 @@ struct MainView: View {
                 .edgesIgnoringSafeArea(.all)
                 VStack {
                     Button(action: {
-                        showImage.toggle()
+                        activeSheet = .image
+                        showSheet.toggle()
                         print("Hola")
                     }){
                         Image("Plane")
@@ -89,14 +102,19 @@ struct MainView: View {
                     Spacer()
                 }
                 .edgesIgnoringSafeArea(.all)
+                .sheet(isPresented: $showSheet) {
+                    if activeSheet == .edit {
+                    EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight, healthIndex: $healthIndex, health: health)
+                    } else {
+                        ImageView()
+                    }
+                }
+                //        .sheet(isPresented: $showImage) {
+                //                    ImageView()
+                //                }
             }
         }
-        .sheet(isPresented: $showImage) {
-            ImageView()
-        }
-        .sheet(isPresented: $showEdit) {
-            EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight)
-        }
+        
         
     }
 }

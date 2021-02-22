@@ -9,11 +9,15 @@ import SwiftUI
 
 struct EditView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @Binding var name: String
     @Binding var email: String
     @Binding var birthDate: Date
     @Binding var height: Double
     @Binding var weight: Int
+    @Binding var healthIndex: Int
+    var health: [String]
     
     // Gives format to date
     var dateFormat: DateFormatter {
@@ -62,27 +66,65 @@ struct EditView: View {
                 }
                 Section {
                     VStack {
-                    Text("Height: \(String(format: "%0.2f", height))")
-                        .font(.RobotoRegular(size: 20))
-                        .foregroundColor(Color("Down"))
-                    // Slider
-                    Slider(value: $height, in: 0.5...2.6)
-                        .padding(.horizontal,40)
-                        HStack {
-                        Text("Weight: \(weight)")
+                        Text("Height: \(String(format: "%0.2f", height))")
                             .font(.RobotoRegular(size: 20))
                             .foregroundColor(Color("Down"))
-                        // Stepper
-                        Stepper(value: $weight, in: 30...100) {
-                            Text("")
+                        // Slider
+                        Slider(value: $height, in: 0.5...2.6)
+                            .padding(.horizontal,40)
+                        HStack {
+                            Text("Weight: \(weight)")
                                 .font(.RobotoRegular(size: 20))
                                 .foregroundColor(Color("Down"))
-                        }
+                            // Stepper
+                            Stepper(value: $weight, in: 30...100) {
+                                Text("")
+                                    .font(.RobotoRegular(size: 20))
+                                    .foregroundColor(Color("Down"))
+                            }
                         }
                         .padding(.horizontal, 47)
                     }
                 }
+                Section {
+                    VStack {
+                        HStack {
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(Color(health[healthIndex]))
+                            Text(health[healthIndex])
+                                .font(.RobotoRegular(size: 20))
+                                .foregroundColor(Color("Down"))
+                        }
+                        // Picker tipo segmented values
+                        Picker(selection: $healthIndex, label:
+                                Text("How healthy are you?")
+                        ){
+                            ForEach(0..<health.count) { index in
+                                Text(self.health[index])
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                    }
+                }
             }
+/*            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                VStack {
+                    HStack {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(Color("Up"))
+                        Text("Save")
+                            .font(.RobotoRegular(size: 32))
+                            .foregroundColor(Color("Up"))
+                    }
+                }
+                .padding()
+                .background(Color("Down"))
+                .cornerRadius(40)
+            })
+            .padding() */
         }
     }
 }
@@ -94,8 +136,9 @@ struct EditView_Previews: PreviewProvider {
     @State static var birthDate: Date = Date()
     @State static var height: Double = 1.80
     @State static var weight: Int = 66
+    @State static var healthIndex: Int = 0
     
     static var previews: some View {
-        EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight)
+        EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight, healthIndex: $healthIndex, health: ["Good", "Regular", "Bad"])
     }
 }

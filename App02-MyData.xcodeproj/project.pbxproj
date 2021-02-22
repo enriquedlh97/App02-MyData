@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		534DBA1E25E3594200B56131 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DBA1D25E3594200B56131 /* Enums.swift */; };
 		535F731F25DD807900296826 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535F731E25DD807900296826 /* DataView.swift */; };
 		535F732225DD896000296826 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535F732125DD896000296826 /* ImageView.swift */; };
 		535F732525DD9AEE00296826 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535F732425DD9AEE00296826 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		534DBA1D25E3594200B56131 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		535F731E25DD807900296826 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		535F732125DD896000296826 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		535F732425DD9AEE00296826 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				538ABD9425DA0C360034F15D /* App02_MyDataApp.swift */,
 				538ABD9625DA0C360034F15D /* MainView.swift */,
 				539BD93B25E319B70097293C /* EditView.swift */,
+				534DBA1D25E3594200B56131 /* Enums.swift */,
 				53E6307825E30C4700F6F953 /* Test1View.swift */,
 				53E6307425E3082600F6F953 /* TestView.swift */,
 				535F732125DD896000296826 /* ImageView.swift */,
@@ -181,6 +184,7 @@
 			files = (
 				53E6307525E3082600F6F953 /* TestView.swift in Sources */,
 				535F732525DD9AEE00296826 /* ViewController.swift in Sources */,
+				534DBA1E25E3594200B56131 /* Enums.swift in Sources */,
 				535F732225DD896000296826 /* ImageView.swift in Sources */,
 				538ABD9725DA0C360034F15D /* MainView.swift in Sources */,
 				538E78CC25DC7BD30018878E /* Fonts.swift in Sources */,

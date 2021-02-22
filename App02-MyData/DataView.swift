@@ -23,6 +23,7 @@ struct DataView: View {
                 .padding()
             Spacer()
         }
+        .padding(.horizontal)
     }
 }
 
