@@ -16,6 +16,8 @@ struct MainView: View {
     @State var email: String = "enriquedlh97@hotmail.com"
     @State var country: String = "Mexico"
     @State var birthDate: Date = Date()
+    @State var height: Double = 1.7245
+    @State var weight: Int = 66
     
     // Gives format to date
     var dateFormat: DateFormatter {
@@ -44,8 +46,9 @@ struct MainView: View {
                                 DataView(texto: name, imagen: "person")
                                     .padding(.top, 140)
                                 DataView(texto: email, imagen: "envelope")
-                                DataView(texto: country, imagen: "house.fill")
+                                DataView(texto: country, imagen: "house")
                                 DataView(texto: "\(dateFormat.string(from: birthDate))", imagen: "calendar")
+                                DataView(texto: "Height: \(String(format: "%0.2f", height)) - Weight: \(weight)", imagen: "heart")
                                 Spacer()
                                 Button(action: {
                                     showEdit.toggle()
@@ -87,7 +90,7 @@ struct MainView: View {
             ImageView()
         }
         .sheet(isPresented: $showEdit) {
-            EditView(name: $name, email: $email, birthDate: $birthDate)
+            EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight)
         }
         
     }
