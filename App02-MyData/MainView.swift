@@ -23,58 +23,64 @@ struct MainView: View {
         formatter.dateFormat = "yyyy/MMM/dd"
         return formatter
     }
-
+    
     var body: some View {
-        
-        ZStack {
-            VStack(spacing: 0) {
-                VStack {
-                    ZStack {
-                        Color("Up")
-                        Text("My info")
-                            .font(.RobotoMono(size: 50))
-                            .padding()
+        GeometryReader { geo in
+            ZStack {
+                VStack(spacing: 0) {
+                    VStack {
+                        ZStack {
+                            Color("Up")
+                            Text("My info")
+                                .font(.RobotoMono(size: 35))
+                                .padding()
+                        }
                     }
-                }
-                VStack {
-                    ZStack {
-                        Color("Down")
-                        VStack {
-                            DataView(texto: name, imagen: "person")
-                                .padding(.top, 90)
-                            DataView(texto: email, imagen: "envelope")
-                            DataView(texto: country, imagen: "house.fill")
-                            DataView(texto: "\(dateFormat.string(from: birthDate))", imagen: "calendar")
-                            Button(action: {
-                                showEdit.toggle()
-                            }, label: {
-                                HStack {
-                                    Image(systemName: "pencil")
-                                        .foregroundColor(Color("Down"))
-                                    Text("Edit")
-                                        .font(.RobotoRegular(size: 20))
-                                        .foregroundColor(Color("Down"))
-                                }
-                                .padding(10)
-                                .background(Color("Up"))
-                                .cornerRadius(20)
-                            })
+                    .frame(height: geo.size.height / 3)
+                    VStack {
+                        ZStack {
+                            Color("Down")
+                            VStack {
+                                DataView(texto: name, imagen: "person")
+                                    .padding(.top, 140)
+                                DataView(texto: email, imagen: "envelope")
+                                DataView(texto: country, imagen: "house.fill")
+                                DataView(texto: "\(dateFormat.string(from: birthDate))", imagen: "calendar")
+                                Spacer()
+                                Button(action: {
+                                    showEdit.toggle()
+                                }, label: {
+                                    HStack {
+                                        Image(systemName: "pencil")
+                                            .foregroundColor(Color("Down"))
+                                        Text("Edit")
+                                            .font(.RobotoRegular(size: 20))
+                                            .foregroundColor(Color("Down"))
+                                    }
+                                    .padding(10)
+                                    .background(Color("Up"))
+                                    .cornerRadius(20)
+                                })
+                                .padding(.bottom, 80)
+                            }
                         }
                     }
                 }
-            }
-            .edgesIgnoringSafeArea(.all)
-            VStack {
-                Button(action: {
-                    showImage.toggle()
-                    print("Hola")
-                }){
-                    Image("Plane")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width:200)
+                .edgesIgnoringSafeArea(.all)
+                VStack {
+                    Button(action: {
+                        showImage.toggle()
+                        print("Hola")
+                    }){
+                        Image("Plane")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:200)
+                    }
+                    .frame(height: geo.size.height / 3*2)
+                    Spacer()
                 }
-                
+                .edgesIgnoringSafeArea(.all)
             }
         }
         .sheet(isPresented: $showImage) {

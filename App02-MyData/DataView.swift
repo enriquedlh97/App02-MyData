@@ -19,7 +19,7 @@ struct DataView: View {
                 .foregroundColor(.white)
             Spacer()
             Text(texto)
-                .font(.RobotoRegular(size: 22))
+                .font(.RobotoRegular(size: 20))
                 .padding()
             Spacer()
         }
