@@ -45,10 +45,15 @@ struct MainView: View {
                             VStack {
                                 DataView(texto: name, imagen: "person")
                                     .padding(.top, 140)
+                                    .padding(.horizontal)
                                 DataView(texto: email, imagen: "envelope")
+                                    .padding(.horizontal)
                                 DataView(texto: country, imagen: "house")
+                                    .padding(.horizontal)
                                 DataView(texto: "\(dateFormat.string(from: birthDate))", imagen: "calendar")
+                                    .padding(.horizontal)
                                 DataView(texto: "Height: \(String(format: "%0.2f", height)) - Weight: \(weight)", imagen: "heart")
+                                    .padding(.horizontal)
                                 Spacer()
                                 Button(action: {
                                     showEdit.toggle()
