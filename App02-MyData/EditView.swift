@@ -18,6 +18,8 @@ struct EditView: View {
     @Binding var weight: Int
     @Binding var healthIndex: Int
     var health: [String]
+    @Binding var countryIndex: Int
+    var countries: [String]
     
     // Gives format to date
     var dateFormat: DateFormatter {
@@ -54,8 +56,20 @@ struct EditView: View {
                                 .foregroundColor(Color("Down"))
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                         }
+                        
+                                Picker(selection: $countryIndex, label:
+                                        Text("Country:")
+                                ) {
+                                    ForEach(0 ..< countries.count) { index in
+                                        Text(self.countries[index])
+                                    }
+                                }
+                            
+                        
+
                     }
                 }
+                
                 Section {
                     // Date picker
                     DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
@@ -107,24 +121,24 @@ struct EditView: View {
                     }
                 }
             }
-/*            Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }, label: {
-                VStack {
-                    HStack {
-                        Image(systemName: "xmark.circle.fill")
-                            .font(.largeTitle)
-                            .foregroundColor(Color("Up"))
-                        Text("Save")
-                            .font(.RobotoRegular(size: 32))
-                            .foregroundColor(Color("Up"))
-                    }
-                }
-                .padding()
-                .background(Color("Down"))
-                .cornerRadius(40)
-            })
-            .padding() */
+            /*            Button(action: {
+             presentationMode.wrappedValue.dismiss()
+             }, label: {
+             VStack {
+             HStack {
+             Image(systemName: "xmark.circle.fill")
+             .font(.largeTitle)
+             .foregroundColor(Color("Up"))
+             Text("Save")
+             .font(.RobotoRegular(size: 32))
+             .foregroundColor(Color("Up"))
+             }
+             }
+             .padding()
+             .background(Color("Down"))
+             .cornerRadius(40)
+             })
+             .padding() */
         }
     }
 }
@@ -137,8 +151,9 @@ struct EditView_Previews: PreviewProvider {
     @State static var height: Double = 1.80
     @State static var weight: Int = 66
     @State static var healthIndex: Int = 0
+    @State static var countryIndex: Int = 0
     
     static var previews: some View {
-        EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight, healthIndex: $healthIndex, health: ["Good", "Regular", "Bad"])
+        EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight, healthIndex: $healthIndex, health: ["Good", "Regular", "Bad"], countryIndex: $countryIndex, countries: ["US", "Canada", "Mexico", "Germany", "Russia", "Italy", "Colombia", "Argentina", "France"])
     }
 }

@@ -21,8 +21,10 @@ struct MainView: View {
     @State var height: Double = 1.7245
     @State var weight: Int = 66
     @State var healthIndex: Int = 0
+    @State var countryIndex: Int = 0
     
     let health = ["Good", "Regular", "Bad"]
+    let countries = ["US", "Canada", "Mexico", "Germany", "Russia", "Italy", "Colombia", "Argentina", "France"]
     
     
     // Gives format to date
@@ -104,7 +106,7 @@ struct MainView: View {
                 .edgesIgnoringSafeArea(.all)
                 .sheet(isPresented: $showSheet) {
                     if activeSheet == .edit {
-                    EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight, healthIndex: $healthIndex, health: health)
+                        EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight, healthIndex: $healthIndex, health: health, countryIndex: $countryIndex, countries: countries)
                     } else {
                         ImageView()
                     }
