@@ -69,22 +69,21 @@ struct MainView: View {
                                 }
                                 .padding(.horizontal)
                                 Spacer()
-                                Button(action: {
-                                    activeSheet = .edit
-                                    showSheet.toggle()
-                                }, label: {
-                                    HStack {
-                                        Image(systemName: "pencil")
-                                            .foregroundColor(Color("Down"))
-                                        Text("Edit")
-                                            .font(.RobotoRegular(size: 20))
-                                            .foregroundColor(Color("Down"))
-                                    }
-                                    .padding(10)
-                                    .background(Color("Up"))
-                                    .cornerRadius(20)
-                                })
+                                NavigationLink(destination: EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight, healthIndex: $healthIndex, health: health, countryIndex: $countryIndex, countries: countries),
+                                               label: {
+                                                HStack {
+                                                    Image(systemName: "pencil")
+                                                        .foregroundColor(Color("Down"))
+                                                    Text("Edit")
+                                                        .font(.RobotoRegular(size: 20))
+                                                        .foregroundColor(Color("Down"))
+                                                }
+                                                .padding()
+                                                .background(Color("Up"))
+                                                .cornerRadius(20)
+                                               })
                                 .padding(.bottom, 80)
+                                Spacer()
                             }
                         }
                     }
@@ -106,11 +105,12 @@ struct MainView: View {
                 }
                 .edgesIgnoringSafeArea(.all)
                 .sheet(isPresented: $showSheet) {
-                    if activeSheet == .edit {
+ /*                   if activeSheet == .edit {
                         EditView(name: $name, email: $email, birthDate: $birthDate, height: $height, weight: $weight, healthIndex: $healthIndex, health: health, countryIndex: $countryIndex, countries: countries)
                     } else {
+*/
                         ImageView()
-                    }
+ //                   }
                 }
                 //        .sheet(isPresented: $showImage) {
                 //                    ImageView()
