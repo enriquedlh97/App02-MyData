@@ -30,9 +30,10 @@ struct EditView: View {
     
     var body: some View {
         VStack {
-            Text("My info")
+/*            Text("My info")
                 .font(.RobotoRegular(size: 32))
                 .foregroundColor(Color("Down"))
+ */
             Form {
                 Section {
                     VStack(alignment: .leading) {
@@ -140,6 +141,8 @@ struct EditView: View {
              })
              .padding() */
         }
+        .navigationBarTitle("Edit - My Info")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
