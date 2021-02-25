@@ -45,7 +45,9 @@ struct MainView: View {
                             Text("My info")
                                 .font(.RobotoMono(size: 35))
                                 .padding()
+                        
                         }
+                        Spacer(minLength: 50)
                     }
                     .frame(height: geo.size.height / 3)
                     VStack {
