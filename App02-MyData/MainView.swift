@@ -118,6 +118,9 @@ struct MainView: View {
                 //                    ImageView()
                 //                }
             }
+            .navigationBarTitle("My Info")
+            .navigationBarHidden(true)
+            //.navigationBarTitleDisplayMode(.inline)
         }
         }
         

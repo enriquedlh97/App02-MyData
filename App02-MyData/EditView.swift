@@ -142,7 +142,7 @@ struct EditView: View {
              .padding() */
         }
         .navigationBarTitle("Edit - My Info")
-        .navigationBarTitleDisplayMode(.inline)
+ //       .navigationBarTitleDisplayMode(.inline)
     }
 }
 
