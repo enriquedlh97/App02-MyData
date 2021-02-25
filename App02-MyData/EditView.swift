@@ -58,8 +58,12 @@ struct EditView: View {
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                         }
                         
+                        Spacer(minLength: 20)
                                 Picker(selection: $countryIndex, label:
                                         Text("Country:")
+                                        .font(.RobotoRegular(size: 20))
+                                        .foregroundColor(.blue)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
                                 ) {
                                     ForEach(0 ..< countries.count) { index in
                                         Text(self.countries[index])
