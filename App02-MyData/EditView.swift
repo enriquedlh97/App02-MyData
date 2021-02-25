@@ -62,7 +62,7 @@ struct EditView: View {
                                 Picker(selection: $countryIndex, label:
                                         Text("Country:")
                                         .font(.RobotoRegular(size: 20))
-                                        .foregroundColor(.blue)
+                                        .foregroundColor(Color("Down"))
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                 ) {
                                     ForEach(0 ..< countries.count) { index in

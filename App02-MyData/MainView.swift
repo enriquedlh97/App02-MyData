@@ -57,7 +57,7 @@ struct MainView: View {
                                 DataView(texto: name, imagen: "person")
                                     .padding(.top, 140)
                                 DataView(texto: email, imagen: "envelope")
-                                DataView(texto: country, imagen: "house")
+                                DataView(texto: countries[countryIndex], imagen: "house")
                                 DataView(texto: "\(dateFormat.string(from: birthDate))", imagen: "calendar")
                                 HStack {
                                     Image(systemName: "heart.fill")
