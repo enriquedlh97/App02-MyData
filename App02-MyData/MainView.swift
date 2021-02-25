@@ -35,6 +35,7 @@ struct MainView: View {
     }
     
     var body: some View {
+        NavigationView {
         GeometryReader { geo in
             ZStack {
                 VStack(spacing: 0) {
@@ -116,7 +117,7 @@ struct MainView: View {
                 //                }
             }
         }
-        
+        }
         
     }
 }
